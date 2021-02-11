@@ -1,0 +1,12 @@
+.searchField {
+    border-radius: 5px;
+    border-style: solid;
+    width: 400px;
+    height: 60px;
+}
+
+#searchButton {
+    background-color: greenyellow;
+    width: 150px;
+    height: 50px;
+}
