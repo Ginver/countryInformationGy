@@ -1,4 +1,11 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: large;
+}
 .searchField {
+    flex-direction: center;
     border-radius: 5px;
     border-style: solid;
     width: 400px;
@@ -6,7 +13,9 @@
 }
 
 #searchButton {
-    background-color: greenyellow;
+    background-color: darkslategray;
+    border-radius: 5px;
+    color: white;
     width: 150px;
     height: 50px;
 }
