@@ -46,14 +46,15 @@ button.addEventListener("click", searchByCountry);
 // - [x] template string maken met -> `${countryCapital} ... etc`
         const capital = `The capital is ${countryData.capital}`;
             console.log(capital);
-    };
 
-// Opdracht 4. Maak een functie die ongeacht het aantal currencies die in een land gebruikt worden, een string maakt. In een land kunnen één of twee currencies gebruikt worden:
+
+// Opdracht 4. Maak een functie die ongeacht het aantal currencies die in een land gebruikt worden, een string maakt.
+// In een land kunnen één of twee currencies gebruikt worden:
 // 1 valuta: `and you can pay with [currency]'s`
 // 2 valuta's: `and you can pay with [currency]'s and [currency]'s`
 //
-// - [ ] Goed in de data kijken, waar zit deze info: -> loggen
-// - [ ] variabele maken, en de currencies uit de data daaraan toekennen
+// - [x] Goed in de data kijken, waar zit deze info: -> loggen
+// - [x] variabele maken, en de currencies uit de data daaraan toekennen
 // - [ ] functie maken -> formatCurrencies
 //     - [ ] aanroepen -> logje in de functie zetten om te checken
 // - [ ] input: currencies, parameter(s) toevoegen, argument(en) meegeven
@@ -64,18 +65,30 @@ button.addEventListener("click", searchByCountry);
 //     - [ ] return de waarde `and you can pay with [currency]'s and [currency]'s`
 //     console.log(response) // countries!!
 
-//
-// console.log(currencies)
-// //hier definieren
-// //hier aanroepen -> currenties is in scope
-// formatCurrencies(currencies) // argument -> waarde
-// //console.log(currencies)
-// };
-// const button = document.getElementById('searchButton')
-// button.addEventListener("click", searchByCountry);
-//
-// //hier definieren
-// function formatCurrencies(currencyArray){ //parameter -> placeholder
-//     console.log('INPUT', currencyArray)
+        const currency = `and you can pay with ${countryData.currencies[0].name}'s`;
+        console.log(currency);
 
-// Opdracht 8
+        // const currencies = countryData.currencies;
+        // console.log(currencies);
+        // hier definieren
+        // hier aanroepen -> currenties is in scope
+
+    //     formatcurrencies(currencies); // argument -> waarde
+    //     //hier definieren
+    //     function formatcurrencies(currancyArray) { //parameter -> placeholder
+    //         console.log("INPUT:", currancyArray);
+    //         return `and you can pay with ${countryData.currencies[0].name}'s and ${countryData.currencies[1].name}'s`;
+    //     } // werkt niet
+
+        // if (let i = 0; currencyArray.length < i; i++) {
+        //     console.log(`and you can pay with ${countryData.currencies[0].name}'s and ${countryData.currencies[1].name}'s`);
+        // }
+
+        // for (const currency of currencies) {
+        //  return `and you can pay with ${countryData.currencies[0].name}'s and ${countryData.currencies}'s`;
+        // }
+
+    };
+
+
+
