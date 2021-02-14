@@ -90,5 +90,8 @@ button.addEventListener("click", searchByCountry);
 
     };
 
+// Odracht 5. Check of alles nog steeds werkt als je de gegevens over _Aruba_ of _Duitsland_ ophaalt!
+// met Aruba werkt het wel maar met Duitsland/Germany krijg ik een error
+
 
 
