@@ -21,7 +21,7 @@ button.addEventListener("click", searchByCountry);
 
     async function searchByCountry() {
             console.log("GET COUNTRY HERE");
-        const country = "Belgium";
+        const country = "Germany";
         const url = `https://restcountries.eu/rest/v2/name/${country}?fullText=true`;
         const response = await axios.get(url);
             console.log(response); // -> country
