@@ -28,18 +28,22 @@ button.addEventListener("click", searchByCountry);
         // je krijgt een array - niet een object
         //
         const countryData = response.data[0];
-            console.log(response.data[0].name);
+        //const countryData = response.data;
+            console.log(response.data[0]);
+        //    console.log(response.data.name);
 
-// Opdracht 2.
-// Maak op basis van de response de volgende string en log dit in de console: `[country-naam] is situated in [subarea-name]. It has a population of [amount] people.`
-// - [ ] Goed in de data kijken, waar zit deze info: -> loggen
-// - [ ] variabelen maken: countryName, countryArea, countryPopulation
-// - [ ] template string maken met -> `${countryName} ... etc`
+// Opdracht 2.Maak op basis van de response de volgende string en log dit in de console: `[country-naam] is situated in [subarea-name]. It has a population of [amount] people.`
+// - [x] Goed in de data kijken, waar zit deze info: -> loggen
+// - [x] variabelen maken: countryName, countryArea, countryPopulation
+// - [x] template string maken met -> `${countryName} ... etc`
 
-// const geography = `${countryData.name} is situated in ${countryData.subregion}. It has a population of ${countryData.currency} people.`
-// const capital = `The capital is ${countryData.capital}`
+        const geography = `${countryData.name} is situated in ${countryData.subregion}. It has a population of ${countryData.population} people.`;
+        const capital = `The capital is ${countryData.capital}`;
+        console.log(geography);
+        console.log(capital);
      };
 
+//Opdracht 3. Maak op basis van de response de volgende string en log dit in de console: `The capital is [city]`
 // 3. Maak op basis van de response de volgende string en log dit in de console: `The capital is [city]`
 // - [ ] Goed in de data kijken, waar zit deze info: -> loggen
 // - [ ] variabelen maken: countryCapital
