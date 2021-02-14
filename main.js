@@ -38,18 +38,15 @@ button.addEventListener("click", searchByCountry);
 // - [x] template string maken met -> `${countryName} ... etc`
 
         const geography = `${countryData.name} is situated in ${countryData.subregion}. It has a population of ${countryData.population} people.`;
-        const capital = `The capital is ${countryData.capital}`;
-        console.log(geography);
-        console.log(capital);
-     };
+            console.log(geography);
 
 //Opdracht 3. Maak op basis van de response de volgende string en log dit in de console: `The capital is [city]`
-// 3. Maak op basis van de response de volgende string en log dit in de console: `The capital is [city]`
-// - [ ] Goed in de data kijken, waar zit deze info: -> loggen
-// - [ ] variabelen maken: countryCapital
-// - [ ] template string maken met -> `${countryCapital} ... etc`
-
-
+// - [x] Goed in de data kijken, waar zit deze info: -> loggen
+// - [x] variabelen maken: countryCapital
+// - [x] template string maken met -> `${countryCapital} ... etc`
+        const capital = `The capital is ${countryData.capital}`;
+            console.log(capital);
+    };
 
 // Opdracht 4. Maak een functie die ongeacht het aantal currencies die in een land gebruikt worden, een string maakt. In een land kunnen één of twee currencies gebruikt worden:
 // 1 valuta: `and you can pay with [currency]'s`
