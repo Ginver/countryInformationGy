@@ -6,16 +6,26 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Let's search some country information</h1>
-
 <div class="container">
+    <div>
+        <h1>Let's search some country information!</h1>
+        <img src="https://cdn.dribbble.com/users/1028385/screenshots/2952329/tgif_030.gif" alt="spinning globe animation">
 
-<form>
-    <input id="searchText" placeholder="sarch country..."/>
-</form>
+        <label for="searchText"></label>
+        <input id="searchText" placeholder="search country..."/>
+        <button id="searchButton">SEARCH</button>
+    </div>
 
-<button id="searchButton" >SEARCH</button>
+<!--    <div>-->
+<!--        <p id="warningMsg"></p>-->
+<!--    </div>-->
+
+    <div id="resultsCountry">
+        <img id="flagImage" src=""/>
+        <div id="countryInfo"></div>
+    </div>
 </div>
+
 <script src="./node_modules/axios/dist/axios.min.js"></script>
 <script src="main.js"></script>
 </body>

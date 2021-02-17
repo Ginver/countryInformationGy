@@ -29,7 +29,7 @@
         const country = userInput; // hardcode straks dynamisch
         const url = `https://restcountries.eu/rest/v2/name/${country}?fullText=true`;
         const response = await axios.get(url);
-        // console.log(response); // -> countries!
+        console.log(response); // -> countries!
         // je krijgt een array - niet een object
         // console.log(response.data[0].name);
 
@@ -42,6 +42,10 @@
 // - [x] variabelen maken: countryName, countryArea, countryPopulation // 1x variable gemaakt
 // - [x] template string maken met -> `${countryName} ... etc`
         // console.log(countryData);
+
+        const countryFlag = countryData.flag;
+        console.log(countryFlag);
+
         const geography = `${countryData.name} is situated in ${countryData.subregion}. It has a population of ${countryData.population} people.`;
         console.log(geography);
 
@@ -50,7 +54,7 @@
 // - [x] variabelen maken: countryCapital
 // - [x] template string maken met -> `${countryCapital} ... etc`
 
-        const countryCapital = `The capital is ${countryData.capital}`;
+        const countryCapital = `The capital is ${countryData.capital} `;
         console.log(countryCapital);
 
 // Opdracht 4. Maak een functie die ongeacht het aantal currencies die in een land gebruikt worden, een string maakt.
@@ -69,7 +73,7 @@
 //     - [ ] 2 currencies -> `and you can pay with [currency]'s and [currency]'s`
 //     - [ ] return de waarde `and you can pay with [currency]'s and [currency]'s`
 
-        const currency = `and you can pay with ${countryData.currencies[0].name}'s`;
+        const currency = `and you can pay with ${countryData.currencies[0].name}'s.`;
             console.log(currency);
 
         // de uitwerking door Rein werkt niet bij  mij :(
@@ -125,6 +129,8 @@
         const spokenLanguage = `They speak ${countryData.languages[0].name}.`
             console.log(spokenLanguage);
 
+
+
         //     if (languages.length === 1) {
         //     return `They speak ${countryData.languages[0].name}.`
         // } else if (languages.length > 1 ) {
@@ -133,7 +139,7 @@
         //     return `They speak ${countryData.languages[0].name} and ${countryData.languages[1].name} and ${countryData.languages[2].name}`
 
         // :( logt alleen optie 1 als er 1 taal gesproken wordt
-    }
+
 
 // Opdracht 7. Zorg ervoor dat de opgehaalde data op de volgende manier wordt toegevoegd aan de DOM:
 //
@@ -144,16 +150,19 @@
 // The capital is [city] and you can pay with [currency]'s
 // They speak [language], [language] and [language]
 // ```
-
-
+        const countryInfo = document.getElementById('countryInfo');
+        countryInfo.textContent = geography + ' ' + countryCapital + ' ' + currency + ' ' + spokenLanguage;
+        document.getElementById('flagImage').src = countryFlag;
+        // imageFlag.src = countryFlag;
+    }
 // Opdracht 8. Maak een inputveld op de pagina en zorg ervoor dat als de gebruiker op enter drukt, de functie wordt
 // aangeroepen waarmee de gegevens over `België` worden opgehaald.
-// - [ ] maak een inputveld in HTML: id="searchText"
-// - [ ] getElementById- inputVeld selecteren
-// - [ ] als de gebruiker op enter drukt: addEventlistener als user op enter drukt gegevens worden opgehaald
-// - [ ] "keypress"
-// - [ ] was de key enter?
-// - [ ] functie wordt aangeroepen waarmee de gegevens over `België` worden opgehaald
+// - [x] maak een inputveld in HTML: id="searchText"
+// - [x] getElementById- inputVeld selecteren
+// - [x] als de gebruiker op enter drukt: addEventlistener als user op enter drukt gegevens worden opgehaald
+// - [x] "keypress"
+// - [x] was de key enter?
+// - [x] functie wordt aangeroepen waarmee de gegevens over `België` worden opgehaald
 
 function handleKeyPress(event){
       //   console.log(event.code)
@@ -163,15 +172,14 @@ function handleKeyPress(event){
     }
 }
 
-
 // Opdracht 9. Zorg ervoor dat de waarde uit het input veld wordt gebruikt als query voor het GET request.
 // Er moet alleen een request gedaan worden als de gebruiker op enter drukt, of op de zoek-knop klikt.
 // _Tip:_ gebruik een globale variabele.
 
-// - [ ] waarde uit de inputveld halen: selecteren by getElementById
-// - [ ] & .value loggen
-// - [ ] gebruikt die  als query voor het GET request
-// - [ ] als de gebruiker op enter drukt, of op de zoek-knop klikt
+// - [x] waarde uit de inputveld halen: selecteren by getElementById
+// - [x] & .value loggen
+// - [x] gebruikt die  als query voor het GET request
+// - [x] als de gebruiker op enter drukt, of op de zoek-knop klikt
 
 const button = document.getElementById('searchButton');
 button.addEventListener("click", searchByCountry);
@@ -181,3 +189,23 @@ const inputVeld = document.getElementById('searchText');
 // inputVeld.addEventListener("click", searchByCountry);
 inputVeld.addEventListener('keypress', handleKeyPress);
 //console.log("Element?", inputVeld);
+
+// 10. Zorg ervoor dat de waarde van het input veld wordt leeggemaakt na elke zoekopdracht.
+
+// 11. Zorg ervoor dat er altijd maar één zoekresultaat op de pagina staat.
+
+// Opdracht 12. Zorg ervoor dat als er naar een land wordt gezocht dat niet bestaat, er een foutmelding in de DOM wordt gezet.
+// _Tip:_ als er een ongeldige API call wordt gemaakt, zal de response in het `catch` blok terecht komen.
+
+const errorWarning = document.getElementById('warningMsg');
+inputVeld.addEventListener('keyup', checkCountry);
+
+function checkCountry(e) {
+    // Wanneer de waarde een @ bevat willen we de melding WEL tonen
+    if (e.target.value !== searchByCountry) {
+        errorWarning.textContent = 'Check again your spelling. Is it possible it is not a country? Refresh your geography knowledge!';
+    } else {
+        // in alle andere gevallen tonen we de melding NIET
+        errorWarning.textContent = '';
+    }
+}

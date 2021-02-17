@@ -1,21 +1,53 @@
+body {
+    background-color: #0A1314;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: large;
+    align-content: center;
+    font-size: 30px;
+    text-align: center;
+    }
+
+h1, #countryInfo {
+    color: lightgoldenrodyellow;
 }
-.searchField {
-    flex-direction: center;
+
+#searchText {
+    background-color: lightgoldenrodyellow;
     border-radius: 5px;
     border-style: solid;
     width: 400px;
     height: 60px;
+    font-size: 20px;
 }
 
 #searchButton {
     background-color: darkslategray;
     border-radius: 5px;
-    color: white;
+    color: lightgoldenrodyellow;
     width: 150px;
     height: 50px;
+    font-size: medium;
+}
+
+#searchButton:hover {
+    background-color: green;
+}
+
+#flagImage {
+    width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+#resultsCountry {
+    padding: 30px;
+}
+
+p {
+    font-size: 25px;
+    color: palevioletred;
 }
