@@ -13,6 +13,7 @@ body {
 
 #imgInfo {
     width: 600px;
+    padding-bottom: 100px;
 }
 
 h1, #countryInfo {
