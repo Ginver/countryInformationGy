@@ -11,13 +11,17 @@ body {
     text-align: center;
     }
 
+#imgInfo {
+    width: 600px;
+}
+
 h1, #countryInfo {
     color: lightgoldenrodyellow;
 }
 
 #searchText {
     background-color: lightgoldenrodyellow;
-    border-radius: 5px;
+    border-radius: 8px;
     border-style: solid;
     width: 400px;
     height: 60px;
@@ -26,7 +30,7 @@ h1, #countryInfo {
 
 #searchButton {
     background-color: darkslategray;
-    border-radius: 5px;
+    border-radius: 8px;
     color: lightgoldenrodyellow;
     width: 150px;
     height: 50px;
@@ -41,6 +45,10 @@ h1, #countryInfo {
     width: 150px;
     height: auto;
     margin-bottom: 15px;
+    padding: 2px;
+    border-style: solid;
+    border-color: lightgoldenrodyellow;
+    border-radius: 15px;
 }
 
 #resultsCountry {

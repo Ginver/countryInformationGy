@@ -2,23 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Country information</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="container">
     <div>
         <h1>Let's search some country information!</h1>
-        <img src="https://cdn.dribbble.com/users/1028385/screenshots/2952329/tgif_030.gif" alt="spinning globe animation">
-
-        <label for="searchText"></label>
-        <input id="searchText" placeholder="search country..."/>
-        <button id="searchButton">SEARCH</button>
+        <img id="imgInfo" src="https://cdn.dribbble.com/users/1028385/screenshots/2952329/tgif_030.gif" alt="spinning globe animation">
     </div>
 
-<!--    <div>-->
-<!--        <p id="warningMsg"></p>-->
-<!--    </div>-->
+    <div>
+        <label for="searchText"></label>
+        <input type="text" onfocus="this.value=''" value="search country..." id="searchText" placeholder="search country..."/>
+        <button id="searchButton"> SEARCH </button>
+    </div>
 
     <div id="resultsCountry">
         <img id="flagImage" src=""/>
