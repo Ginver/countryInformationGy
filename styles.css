@@ -7,7 +7,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    font-size: 30px;
     text-align: center;
     }
 
@@ -16,8 +15,9 @@ body {
     padding-bottom: 100px;
 }
 
-h1, #countryInfo {
+h1, #countryInfo, ul{
     color: lightgoldenrodyellow;
+    font-size: 40px;
 }
 
 #searchText {
@@ -28,6 +28,19 @@ h1, #countryInfo {
     height: 60px;
     font-size: 20px;
 }
+#worldMap {
+    background-color: darkslategray;
+    border-radius: 8px;
+    color: lightgoldenrodyellow;
+    width: 200px;
+    height: 50px;
+    font-size: medium;
+    padding: 15px;
+    text-decoration: none;
+}
+#worldMap:hover {
+    background-color: #72CCCC;
+}
 
 #searchButton {
     background-color: darkslategray;
@@ -36,6 +49,7 @@ h1, #countryInfo {
     width: 150px;
     height: 50px;
     font-size: medium;
+    border: none;
 }
 
 #searchButton:hover {
@@ -52,11 +66,67 @@ h1, #countryInfo {
     border-radius: 15px;
 }
 
+.flagOfCountries {
+    width: 30px;
+    height: auto;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    padding: 2px;
+    border: 3px solid;
+    border-color: lightgoldenrodyellow;
+    border-radius: 15px;
+    float: left;
+}
+
 #resultsCountry {
     padding: 30px;
 }
 
-p {
-    font-size: 25px;
+#worldCountry {
+    text-align: center;
+    border-style: solid;
+    border-color: lightgoldenrodyellow;
+    border-radius: 15px;
+}
+
+#countryPopulation {
+    color: lightgoldenrodyellow;
+}
+
+#imageOfWorlMap {
+    width: auto;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 2px;
+    border-style: solid;
+    border-color: lightgoldenrodyellow;
+    border-radius: 15px;
+}
+
+.population {
+    /*display: none;*/
+    opacity: 0;
+    font-size: 18px;
     color: palevioletred;
+    text-align: left;
+}
+
+.visible {
+    /*display: inline;*/
+    opacity: 1;
+}
+
+li {
+    list-style: none;
+    width: 200px;
+    margin-right: 100px;
+    text-align: left;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+    font-size: 16px;
 }

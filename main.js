@@ -1,7 +1,7 @@
 
 
 const button = document.getElementById('searchButton');
-console.log(button);
+//console.log(button);
 button.addEventListener("click", searchByCountry);
 
 const searchField = document.getElementById("searchText");
@@ -23,35 +23,38 @@ button.addEventListener("click", clearSearchField);
 
             const response = await axios.get(url);
             console.log(response); // -> countries!
-            const countryData = response.data[0];
-            const countryFlag = countryData.flag;
-            console.log(countryFlag);
 
-            const geography = `${countryData.name} is situated in ${countryData.subregion}.`
+            // const countryData = response.data[0];
+            const { flag, name, subregion, population, capital, currencies, languages } = response.data[0];
+
+            const countryFlag = flag; // const countryFlag = countryData.flag;
+            //console.log(countryFlag);
+
+            const geography = `${name} is situated in ${subregion}.`;
             //console.log(geography);
 
-            const population = `It has a population of ${countryData.population} people.`;
+            const populationOfCountry = `It has a population of ${population} people.`;
             //console.log(population);
 
-            const countryCapital = `The capital is ${countryData.capital} `;
+            const countryCapital = `The capital is ${capital}.`;
             //console.log(countryCapital);
 
-            const currency = `and you can pay with ${countryData.currencies[0].name}'s.`;
+            const currency = `and you can pay with ${currencies[0].name}'s.`;
             //console.log(currency);
 
-            const spokenLanguage = `They speak ${countryData.languages[0].name}.`
-            ///console.log(spokenLanguage);
+            const spokenLanguage = `They speak ${languages[0].name}.`;
+            //console.log(spokenLanguage);
 
             const countryInfo = document.getElementById('countryInfo');
-            countryInfo.textContent = geography + ' ' + population + ' ' + countryCapital + ' ' + currency + ' ' + spokenLanguage;
+            countryInfo.textContent = geography + " " + populationOfCountry + " " + countryCapital + " " + currency + " " + spokenLanguage;
             document.getElementById('flagImage').src = countryFlag;
             // imageFlag.src = countryFlag;
 
         }
         catch (error) {
-            console.log(error);
-            console.log(`This country doesn't exist. Please try again.`);
-            document.getElementById('countryInfo').textContent = "This country doesn't exist. Please try again.";
+            //console.log(error);
+            //console.log(`This country doesn't exist. Please try again.`);
+            document.getElementById('countryInfo').textContent = "This country doesn't exist or your spelling is incorrect. Please try again.";
             document.getElementById('flagImage').src = "";
         }
     };

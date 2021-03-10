@@ -18,5 +18,6 @@
   "homepage": "https://github.com/Ginver/countryInformationGy#readme",
   "dependencies": {
     "axios": "^0.21.1"
-  }
+  },
+  "keywords": []
 }
